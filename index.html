@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florist - Premium Bouquet Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Florist.</div>
+        <nav>
+            <button id="cart-btn" class="cart-btn">
+                Request (<span id="cart-count">0</span>)
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Exquisite Blooms for Every Occasion</h1>
+            <p>Hand-picked, artfully arranged, and delivered with love.</p>
+            <button onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})" class="cta-btn">Browse Collection</button>
+        </div>
+    </section>
+
+    <main id="products" class="product-grid">
+        <!-- Products will be injected here by JS -->
+    </main>
+
+    <!-- Cart / Invoice Modal -->
+    <div id="invoice-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Your Request</h2>
+            <div id="invoice-items" class="invoice-items">
+                <!-- Cart items injected here -->
+            </div>
+            <div class="invoice-total">
+                <h3>Total Estimate: <span id="total-price">$0.00</span></h3>
+            </div>
+            <div class="invoice-actions">
+                <button id="generate-invoice-btn" class="primary-btn">Generate Invoice (Shopkeeper)</button>
+                <button id="print-btn" class="secondary-btn hidden" onclick="window.print()">Print Invoice</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
